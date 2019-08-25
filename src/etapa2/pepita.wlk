@@ -20,11 +20,11 @@ object pepita {
 	// metodos nuevos
 	
 	method estaDebil() { 
-		return true
+		return energia<50
 	}  // implementar
 	
 	method estaFeliz() { 
-		return true
+		return energia.between(500, 1000)
 	}  // implementar
 	
 	method cuantoQuiereVolar() { 
