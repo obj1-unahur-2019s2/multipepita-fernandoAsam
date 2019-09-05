@@ -54,48 +54,29 @@ object canelones {
 	var tieneSalsa=false
 	var tieneQueso=false
 	
-	method conSalsa() {
-		if (not tieneSalsa) {
-			energia+=5
-			tieneSalsa=true
-			return "salen con salsa"
-			}
-			else
-				return "no more sauce"
+	method ponerSalsa() {
+		tieneSalsa=true
 	}
-	method conQueso() {
-		if (not tieneQueso) {
-			energia+=7
-			tieneQueso=true
-			return "salen con queso"
-			}
-			else
-				return "no more cheese"
+	
+	method ponerQueso() {
+		tieneQueso=true
 	}
+	
 	method sacarSalsa() {
-		if (tieneSalsa) {
-			energia-=5
-			tieneSalsa=false
-			return "ahi tenés sin salsa!!"
-		}
-		else
-			return "no ves que no tiene salsa!!"
+		tieneSalsa=false
+	}
 		
-	}
 	method sacarQueso() {
-		if (tieneQueso) {
-			energia-=7
-			tieneQueso=false
-			return "ahi tenés sin queso!!"
-		}
-		else
-			return "no ves que no tiene queso!!"
+		tieneQueso=false
 	}
+	
 	method energiaPorGramo() {
+		energia=20
+		if(tieneSalsa) { energia+=5 }
+		if(tieneQueso) { energia+=7 }
 		return energia
 	}
 }
-
 
 
 
