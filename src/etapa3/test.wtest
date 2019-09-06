@@ -1,6 +1,0 @@
-import roque
-test "testX" {
-
-	assert.that(true)
-
-}

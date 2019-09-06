@@ -1,7 +1,38 @@
 import comidas.*
 
-object patagonia() { method energiaOtorgada { return 30 } }
-object sierraCordoba() { return 70 }
+object patagonia {
+	method energiaRevitalizadora() { return 30 }
+}
+
+object sierraCordoba {
+	method energiaRevitalizadora() { return 70 }
+}
+
+object marDelPlata {
+	var property temporadaAlta=false
+	var energia=0
+	
+	method energiaXTemporada() {
+		if(temporadaAlta) { energia=-20 }
+		else { energia=80 }
+	}
+	method energiaRevitalizadora() {
+		self.energiaXTemporada()
+		return energia
+	}
+}
+
+object noroeste {
+	var energia=0
+	
+	method diezPorcientoEnergiaPepita() {
+		energia=pepita.energia()*0.1
+	}
+	method energiaRevitalizadora() {
+		self.diezPorcientoEnergiaPepita()
+		return energia
+	}
+}
 /*
  * Agregar
  * - los objetos que representan a los posibles destinos
@@ -11,8 +42,8 @@ object sierraCordoba() { return 70 }
 object pepita {
 	var energia = 0
 	method energia() { return energia }
-	method comer(cosa, gramos) { energia += cosa.energiaPorGramo() * gramos }
+	method comer(comida, gramos) { energia += comida.energiaPorGramo() * gramos }
 	method volarA(destino) {
-		
+		energia+=destino.energiaRevitalizadora()
 	}
 }

@@ -7,4 +7,3 @@ object alpiste {
 object mondongo {
 	method energiaPorGramo() { return 100 }
 }
-

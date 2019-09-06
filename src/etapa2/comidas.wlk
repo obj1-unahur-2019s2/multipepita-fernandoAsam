@@ -77,17 +77,3 @@ object canelones {
 		return energia
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
