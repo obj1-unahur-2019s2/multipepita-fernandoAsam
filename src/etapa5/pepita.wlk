@@ -9,12 +9,24 @@ object sierraCordoba {
 }
 
 object marDelPlata {
-	var property temporadaAlta=false
-	var energia=0
+	var temporadaAlta=false
+	var energia=80
+	
+	method temporadaAlta(estado) {
+		temporadaAlta=estado
+		self.energiaXTemporada()
+	}
+	method temporadaAlta() {
+		return temporadaAlta
+	}
 	
 	method energiaXTemporada() {
-		if(temporadaAlta) { energia=-20 }
-		else { energia=80 }
+		if(temporadaAlta) {
+			energia=-20
+		}
+		else {
+			energia=80
+		}
 	}
 	method energiaRevitalizadora() {
 		self.energiaXTemporada()
@@ -23,13 +35,9 @@ object marDelPlata {
 }
 
 object noroeste {
-	var energia=0
+	var energia=pepita.energia()*0.1
 	
-	method diezPorcientoEnergiaPepita() {
-		energia=pepita.energia()*0.1
-	}
 	method energiaRevitalizadora() {
-		self.diezPorcientoEnergiaPepita()
 		return energia
 	}
 }
