@@ -3,11 +3,22 @@ import comidas.*
 import masAves.*
 
 object roque {
-	var property pajaro=pepita;
-	method entrenar() {
-		pajaro.volar(10)
-		pajaro.comer(alpiste, 300)
-		pajaro.volar(5)
-		pajaro.haceLoQueQuieras()
+	var pupilas = []
+	
+	method agragarPupilas(unAve) {
+		pupilas.add(unAve)
 	}
-}
+	method entrenar(pupila) {
+		pupila.volar(10)
+		pupila.comer(alpiste, 300)
+		pupila.volar(5)
+		pupila.haceLoQueQuieras()
+	}
+	method entrenarTodas() {
+		pupilas.forEach({ ave => self.entrenar(ave) })
+	}
+	method entrenarFelices() {
+		pupilas.filter({e => e.feliz()}).forEach({e=> self.entrenar(e)})
+	}
+	
+	}

@@ -3,6 +3,7 @@ import comidas.*
 
 object pepita {
 	var energia = 0
+	var property feliz=true
 	method energia() { 
 		return energia
 	}
@@ -17,10 +18,6 @@ object pepita {
 	
 	method estaDebil() { 
 		return energia<50
-	}
-	
-	method estaFeliz() { 
-		return energia.between(500, 1000)
 	}
 	
 	method cuantoQuiereVolar() { 

@@ -2,13 +2,14 @@ import comidas.*
 
 object pepon {
 	var energia=0
-	
+	var property feliz=true
 	method comer(comida, gramos) {
 		energia+=(comida.energiaPorGramo()*gramos)/2
 	}  // implementar
 	method volar(kms) { 
 		energia-=(kms/2)+1
 	}           // implementar
+	
 	method haceLoQueQuieras() { 
 		self.comer(sorgo, 20)
 		self.comer(alpiste, 50)
@@ -26,6 +27,7 @@ object pepon {
 object pipa {
 	var kmsAcum=0
 	var gramosAcum=0
+	var property feliz=false
 	
 	method comer(comida, gramos) {
 		gramosAcum+=gramos
@@ -33,6 +35,7 @@ object pipa {
 	method volar(kms) {
 		kmsAcum+=kms
 	}
+	
 	method kmsRecorridos() { return kmsAcum }
 	method gramosIngeridos() { return gramosAcum }
 	
